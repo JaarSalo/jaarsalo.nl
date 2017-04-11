@@ -74,7 +74,8 @@
         }
         
         a {
-            text-decoration: none;
+            text-decoration: underline;
+            color: inherit;
         }
 
         
@@ -131,21 +132,37 @@
         .navigation ul {
             font-size: 1.6rem;
             height: unset;
-            padding-left: 2em;
+            padding-left: 0em;
         }
         .navigation ul ul {
-            padding-left: 0.2em;
+            padding-left: 0.5em;
         }
         .navigation li {
+            list-style: none;
             margin-top: 0.5em;
             margin-bottom: 0.5em;
         }
+        .navigation li a:hover {
+            color: #9bd2ff;
+        }
         .navigation ul ul li {
             list-style: none;
-            font-size: 80%;
+            font-size: 75%;
+            position: relative;
+        }
+        .navigation ul ul li::before {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 70%;
+            text-rendering: auto;
+            position absolute;
+            padding-right: 0.5em;
+            content: "\f0da";
         }
         .navigation a, [data-navigation] a {
             padding: 0;
+            text-decoration: none;
+            display: inline-block;
         }
         
         button {
@@ -171,9 +188,11 @@
             <img src="assets/menu.svg" style=""/>
         </button> 
         <img src="assets/logo-rust.svg" style="width:100%;margin-top:2em;margin-bottom:2em;"/>
-        <ul>
-            <li><a href="/#" class="fa fa-home">&nbsp;</a></li>
-        </ul> 
+        <div style="padding: 0em 1em;">
+            <ul>
+                <li><a href="/#" class="fa fa-home">&nbsp;</a></li>
+            </ul>
+        </div> 
         <div style="margin-left: 3em;margin-top: 2em;position: absolute;bottom: 8px;">
             <i class="fa fa-3x fa-instagram c-rust" aria-hidden="true"></i>
             <i class="fa fa-3x fa-twitter c-rust" aria-hidden="true"></i>
@@ -193,24 +212,15 @@ margin-top: 4px;"/></div>
     <div class="container">
         <div class="row content-area">
             <div class="col-s-4">
-                <div class="content">
-                    <img src="assets/icon1.png" />
-                    <h3>Technologie</h3>
-                    Vele technologische innovaties bieden de mogelijkheid tot zelfvoorzienendheid. Jaar Salo wil deze innovaties voor een ieder toegankelijk te maken.
+                <div class="content" id="tech">
                 </div>
             </div>
             <div class="col-s-4">
-                <div class="content">
-                    <img src="assets/icon2.png" />
-                    <h3>Bouwen</h3>
-                    Jaar Salo ontwikkelt eenvoudige bouwprincipes ten behoeve van zelfvoorzienend wonen. De bouwprincipes zijn vrij toegankelijk en zelf uit te voeren. 
+                <div class="content" id="bouw">
                 </div>
             </div>
             <div class="col-s-4">
-                <div class="content">
-                    <img src="assets/icon3.png" />
-                    <h3>Leven</h3>
-                    Alle principes worden modulair en opschaalbaar ontworpen. Hierdoor zijn ze zowel individueel inzetbaar en kunnen ze in collectiviteit extra voordelen bieden.
+                <div class="content" id="leven">
                 </div>
             </div>
         </div>
@@ -221,34 +231,15 @@ margin-top: 4px;"/></div>
         <div class="container">
             <div class="row content-area c-blue">
                 <div class="col-s-4">
-                    <div class="content">
-                        <h3>Organisatie</h3>
-                        Jaar Salo is een platform voor innovatieve projecten voor zelfvoorzienend wonen en circulair bouwen. Uitganspunt bij de ontwikkeling is dat alle oplossingen en methoden voor een ieder zelf uitvoerbaar zijn. <br/>Jaar Salo is een intiatief van beeldend kunstenaar Jan Samsom en nieuwe media kunstenaar Arnaud Loonstra.
+                    <div class="content" id="organisatie">
                     </div>
                 </div>
                 <div class="col-s-4">
-                    <div class="content">
-                        <h3>Principes</h3>
-                        <ul>
-                            <li>realisatie in eigen beheer</li>
-                            <li>off grid - volledig zelfstandig en los van bestaande netwerken</li>
-                            <li><a href="https://github.com/JaarSalo/">open source</a> - alle toegepaste kennis en techniek is openbaar vrij te gebruiken</li>
-                            <li>sustainable - duurzaam zowel in fabricage als gebruik</li>
-                            <li>modulair - vrijheid door uitbreidbare systemen</li>
-                            <li>ontwikkelen met oog voor de omgeving en context</li>
-                        </ul>
+                    <div class="content" id="principes">
                     </div>
                 </div>
                 <div class="col-s-4">
-                    <div class="content">
-                        <h3>Participatie</h3>
-                        Jaar Salo is een opensource project. Alle toepassingen zijn voor een ieder vrij toegankelijk. Tegelijkertijd nodigen wij iedereen uit om de toepassingen door te ontwikkelen en aan te vullen. Alle technische ontwikkelingen worden gedeeld via github.
-                        
-                        <p>Voor meer informatie:</br>
-                        <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:info@jan-samsom.nl">info@jan-samsom.nl</a> <br>
-                        <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:arnaud@sphaero.org">arnaud@sphaero.org</a> <a href="http://twitter.com/sphaero"><img src="http://abs.twimg.com/favicons/favicon.ico" style="width:16px;"></a> <br>
-                        <span class="glyphicon glyphicon-phone-alt"></span> <a href="tel:0031302310640">030-2310640</a> / <a href="tel:0031641861063">06-41861063</a>
-                        </p>
+                    <div class="content" id="participatie">
                     </div>
                 </div>
             </div>
@@ -300,6 +291,7 @@ margin-top: 4px;"/></div>
     //$( document ).on( 'appie_routed', function(ev) {
         console.log(ev);
         fillNavMenu( window.a.ALL );
+        fillHome( window.a.ALL.home );
         if ( ev.detail === null ) {
             $('#home').show();
             $('#dynamicdata-container').hide();
@@ -369,6 +361,16 @@ margin-top: 4px;"/></div>
         $( 'nav ul li a' ).on( 'click' , route );
         
         window.NAVFILLED = true;
+    }
+    
+    function fillHome( data ) {
+        for ( var key in data ) {
+            console.log( key );
+            // get all markdown files from projecten dir
+            if (key.endsWith( '.md' )) {
+                $( '#'+ key.split('.')[0] ).empty().append( data[ key ].content );
+            }
+        }
     }
     
     var a = new Appie( 'all.json' );
