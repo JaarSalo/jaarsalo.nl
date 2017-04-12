@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your site description." />
+    <title>Jaar Salo - Opensource selfsustainable living</title>
+
+    <link href="/src/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="/src/responsive.min.css" rel="stylesheet" />
+    <style>
+        @font-face {
+            font-family: foobar;
+            src: url(/src/foobar.otf);
+        }
+        
+        @font-face {
+            font-family: perspective;
+            src: url(/src/persans.ttf);
+        }
+        
+        body {
+            font-family: perspective;
+            background-color: white;
+            color: #416555;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: #53b375;
+            font-family: foobar;
+        }
+        /* front colors */
+        .c-darkgreen {
+            color: #416555;
+        }
+        .c-darkrust {
+            color: #812f00;
+        }
+        .c-green {
+            color: #53b375;
+        }
+        .c-blue {
+            color: #9bd2ff;
+        }
+        .c-rust {
+            color: #9e623d;
+        }
+        .c-outline {
+            text-shadow: #111 0px 0px 1px;
+        }
+        /* back colors */
+        .bg-green {
+            background-color: #53b375;
+        }
+        .bg-darkgreen {
+            background-color: #416555;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#416555+0,186040+100 */
+            background: rgb(65,101,85); /* Old browsers */
+            background: -moz-linear-gradient(-45deg, rgba(65,101,85,1) 0%, rgba(24,96,64,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(65,101,85,1) 0%,rgba(24,96,64,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(65,101,85,1) 0%,rgba(24,96,64,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#416555', endColorstr='#186040',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+        .bg-blue {
+            background-color: #9bd2ff;
+        }
+        .bg-rust {
+            background-color: #9e623d;
+        }
+        
+        button {
+          outline: none !important;
+        }
+        
+        a {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        
+        .content-area {
+            /*border-top: 1px solid #9bd2ff;
+            -webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.39);
+            -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.39);
+            box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.39);*/
+        }
+        .bg-green.content-area {
+            border-top: 1px solid #53b375;
+        }
+        .parallax-img {
+            background-image: url(http://jaarsalo.nl/img/jaarsalo_1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+            background-position: center center;
+        }
+        .heading {
+            width: 100%;
+            padding-top:  30%;
+            padding-bottom: 6%;
+            text-align: center;
+            margin: 0;
+        }
+        .content {
+            padding: 1em;
+            padding-top: 1em;
+            padding-bottom: 3em;
+        }
+        
+        body, html, main {
+            /* important */
+            height: 100%;
+        }
+        
+        .parallax-img2 {
+            background-image: url(/assets/console2.jpg);
+        }
+
+        .navigation > button:first-child, [data-navigation] > button:first-child {
+            background-color: transparent;
+            color: #416555;
+            padding-right: 12px;
+            padding-top: 3px;
+            font-size: 1.4em;
+        }
+        .navigation {
+            border-left: 4px solid #416555;
+            font-family: foobar;
+            margin-left: 1em
+        }
+        .navigation ul {
+            font-size: 1.6rem;
+            height: unset;
+            padding-left: 0em;
+        }
+        .navigation ul ul {
+            padding-left: 0.5em;
+        }
+        .navigation li {
+            list-style: none;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        .navigation li a:hover {
+            color: #9bd2ff;
+        }
+        .navigation ul ul li {
+            list-style: none;
+            font-size: 75%;
+            position: relative;
+        }
+        .navigation ul ul li::before {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 70%;
+            text-rendering: auto;
+            position absolute;
+            padding-right: 0.5em;
+            content: "\f0da";
+        }
+        .navigation a, [data-navigation] a {
+            padding: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        button {
+          outline: none !important; // this one
+        }
+        
+        /* fix https://github.com/ResponsiveBP/Responsive/issues/93 
+        [data-lock], [data-lock] body {
+            height: unset;
+            overflow: unset;
+            padding-right: unset !important;
+        }*/
+    </style>
+</head>
+<body>
+    <nav data-navigation class="c-darkgreen bg-green"> 
+        <button class="c-darkgreen">
+            <!--<span class="fa-stack fa-lg c-green">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-bars fa-stack-1x"></i>
+            </span>
+            Menu-->
+            <img src="assets/menu.svg" style=""/>
+        </button> 
+        <img src="assets/logo-rust.svg" style="width:100%;margin-top:2em;margin-bottom:2em;"/>
+        <div style="padding: 0em 1em;">
+            <ul>
+                <li><a href="/#" class="fa fa-home">&nbsp;</a></li>
+            </ul>
+        </div> 
+        <div style="margin-left: 3em;margin-top: 2em;position: absolute;bottom: 8px;">
+            <i class="fa fa-3x fa-instagram c-rust" aria-hidden="true"></i>
+            <i class="fa fa-3x fa-twitter c-rust" aria-hidden="true"></i>
+            <i class="fa fa-3x fa-facebook c-rust" aria-hidden="true"></i>
+            <i class="fa fa-3x fa-envelope c-rust" aria-hidden="true"></i>
+        </div>
+    </nav>
+    <!--<div>
+        <img src="logo.png" style="margin:auto;height:40px;opacity:0.2;"/>
+    </div>-->
+    <div style="text-align:center;background: white; z-index: 100000;height:60px; width:100%;"><img src="assets/logo.svg" style="width: 80%; max-width: unset;max-height: 50px;
+min-height: 20px;
+margin-top: 4px;"/></div>
+   
+   <div id="home">
+    <h1 class="heading c-outline c-blue parallax-img">Opensource zelfvoorzienend wonen</h1>
+    <div class="container">
+        <div class="row content-area">
+            <div class="col-s-4">
+                <div class="content" id="tech">
+                </div>
+            </div>
+            <div class="col-s-4">
+                <div class="content" id="bouw">
+                </div>
+            </div>
+            <div class="col-s-4">
+                <div class="content" id="leven">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="heading c-outline c-blue parallax-img parallax-img2">&nbsp;</h1>
+    <div class="bg-darkgreen">
+        <div class="container">
+            <div class="row content-area c-blue">
+                <div class="col-s-4">
+                    <div class="content" id="organisatie">
+                    </div>
+                </div>
+                <div class="col-s-4">
+                    <div class="content" id="principes">
+                    </div>
+                </div>
+                <div class="col-s-4">
+                    <div class="content" id="participatie">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="container">
+        <div class="row content-area">
+            <div class="col-m-6 offset-m-3">
+                <div class="content">
+                    <p>Een nieuw concept in duurzaam wonen en natuurbeleving. Project Jaar Salo stelt als doel om zelfvoorzienend te kunnen wonen in harmonie met de omgeving. </p>
+                    <p>De volgende principes worden gehanteerd voor de realisatie:</p>
+                    <ul style="display: block;">
+                        <li>off grid - volledig zelfstandig en los van bestaande netwerken</li>
+                        <li><a href="https://github.com/sphaero/stardust">open source</a> - alle toegepaste kennis en techniek is openbaar</li>
+                        <li>sustainable - duurzaam zowel in fabricage als gebruik </li>
+                        <li>modulair - basisunit met diverse uitbreidingsmogelijkheden</li>
+                        <li>unieke beleving van de omgeving</li>
+                    </ul>
+                    <p><a href="http://www.jaarsalo.nl/img/jaarsalo_2.jpg"><img alt="foto binnen, zicht maai hoogte" src="http://www.jaarsalo.nl/img/jaarsalo_2.jpg"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+   </div>    
+    <div class="container" id="dynamicdata-container">
+        <div class="row content-area">
+            <div class="col-m-6 offset-m-3">
+                <div class="content" id="dynamicdata">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/src/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/src/responsive.min.js"></script>
+    <script src="/src/appie.js"></script>
+    <script>
+    DATA = null;
+    NAVFILLED = false;
+    
+    $( document ).on( 'shown.r.navigation', function(ev) {
+        $( 'nav button img').attr( 'src', 'assets/menu-close.svg' );
+    });
+    $( document ).on( 'hidden.r.navigation', function(ev) {
+        $( 'nav button img').attr( 'src', 'assets/menu.svg' );
+    });
+    document.addEventListener( 'appie_routed', function(ev) {
+    //$( document ).on( 'appie_routed', function(ev) {
+        console.log(ev);
+        fillNavMenu( window.a.ALL );
+        fillHome( window.a.ALL.home );
+        if ( ev.detail === null ) {
+            $('#home').show();
+            $('#dynamicdata-container').hide();
+            $('nav').navigation('hide');
+        } else {
+            // show dynamic data
+            $( '#dynamicdata' ).empty().append( ev.detail.content );
+            $('nav').navigation('hide');
+            $('#home').hide();
+            $('nav').navigation('hide');
+            $('#dynamicdata-container').show();
+            //$( '#dynamicdata' )[0].scrollIntoView();
+        }
+        window.scrollTo(0, 0);
+    });
+    
+    function route( ev ) {
+        console.log( ev );
+        if ( ev.currentTarget.hash ) {
+            var path = ev.currentTarget.hash.split('#')[1] || "";
+            path = path.split('?')[0];
+            var data = a.get_data_from_path( path );
+            //console.log( data );
+            $( '#dynamicdata' ).empty().append( data.content );
+            // scroll to dynamicdata container
+            $('#home').hide();
+            $('nav').navigation('hide');
+            $('#dynamicdata-container').show();
+            $( '#dynamicdata' )[0].scrollIntoView();
+        } else {
+            $('#home').show();
+            $('#dynamicdata-container').hide();
+            $('nav').navigation('hide');
+        }
+        window.scrollTo(0, 0);
+    }
+    
+    function fillNavMenu( data ) {
+        if ( window.NAVFILLED ) return;
+        
+        for ( var key in data ) {
+            // get all markdown files from projecten dir
+            if (key.endsWith( '.md' )) {
+                var $li = $('<li/>');
+                var path = data[key].path ? data[key].path + '/' : data[key].path;
+                var $a = $('<a/>', { href: '#' + path + key,
+                                    'data-appie-file': key,
+                                    text: data[key].title || key });
+                $( 'nav ul' ).append($li.append( $a ));
+            }
+        }
+
+        var $prj = $( '<li/>', { text: 'projecten' });
+        var $prjul = $( '<ul/>');
+        for ( var key in data['projecten'] ) {
+            // get all markdown files from projecten dir
+            if (key.endsWith( '.md' )) {
+                var $li = $('<li/>');
+                var $a = $('<a/>', { href: '#' + data['projecten'][key].path + '/' +key, 
+                                    'data-appie-file': 'projecten/' + key,
+                                    text: data['projecten'][key].title || key });
+                $prjul.append($li.append( $a ));
+            }
+        }
+        $( 'nav ul' ).append($prj.append( $prjul ));
+        // run route on nav menu anchor click
+        $( 'nav ul li a' ).on( 'click' , route );
+        
+        window.NAVFILLED = true;
+    }
+    
+    function fillHome( data ) {
+        for ( var key in data ) {
+            console.log( key );
+            // get all markdown files from projecten dir
+            if (key.endsWith( '.md' )) {
+                $( '#'+ key.split('.')[0] ).empty().append( data[ key ].content );
+            }
+        }
+    }
+    
+    var a = new Appie( 'all.json' );
+    /*for ( var key in a.ALL ) {
+        if (key.endsWith( '.md' )) {
+            var $navli = $('<li/>');
+            var $a = $('<a/>', { href: '#'+key });
+            $( 'nav ul' ).append($li.append( $a ));
+        }
+    }*/
+    </script>
+</body>
+</html>
