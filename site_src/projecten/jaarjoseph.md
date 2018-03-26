@@ -13,8 +13,8 @@ is het Jaar Joseph project een proeftuin.
 In het Jaar Joseph project renoveren we een woning die begin vorige eeuw 
 gebouwd werd. Het project bestaat uit 2 hoofdmoten:
 
-* het moderniseren van het bestaande huis
-* het uitbouwen van het bestaande huis
+* renovatie - het moderniseren van het bestaande huis
+* nieuwbouw - het uitbouwen van het bestaande huis
 
 Bij beide moten hanteren we de principes van het Jaar Salo project:
 
@@ -28,24 +28,26 @@ Bij beide moten hanteren we de principes van het Jaar Salo project:
 
 De huidige kenmerken van de woning zijn zoals die van vele woningen in Nederland. 
 Ondanks dat de woning in 1917 ontwikkelt werd heeft de woning reeds spouwmuren. 
-Het huis is op staal gefundeerd op zandbodem. De vloer in de woning is 
+Het huis is op staal gefundeerd op een zandbodem. De vloer in de woning is 
 een combinatie van een houten balkenconstructie met een kruipruimte en 
 een betonnen vloer. Zoals voor veel woningen van dit tijdperk beschikt 
 de woning over een ruime kelder. Het dak heeft een houten spant en 
 dakconstructie waar oorspronkelijk een Hollandse pan op lag.
+
+![na WOII](/assets/1950.jpg)
 
 # Eerdere renovaties
 
 De woning is in de jaren '80 eerder gerenoveerd met de inzichten die toen 
 heersten. Hierdoor is er reeds dubbelglas geplaatst en is er enige 
 isolatie in de slaapkamers geplaatst door middel van glaswol. Voor 
-verwaringing is er een CV installatie geplaatst. De hollandse pan is 
+verwarming is er een CV installatie geplaatst. De Hollandse pan is 
 vervangen voor een betonnen sneldekpan.
 
-# Uitdagingen
+# Uitdagingen renovatie
 
 Ondanks eerdere renovatie voldoet de woning niet aan de moderne eisen 
-voor comfortable wonen. Op hier en daar glaswol na is de woningen per 
+voor comfortabel wonen. Op hier en daar glaswol na is de woningen per 
 saldo ongeisoleerd.  De woning kent natuurlijke ventilatie (tocht) en 
 via de vloer trekt kou omhoog.
 
